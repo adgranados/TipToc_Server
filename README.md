@@ -9,10 +9,10 @@ install mongodb<br/>
 install underscore<br/>
 <br/>
 node_modules:<br/>
-  mongodb<br/>
-  mongogoose<br/>
-  node<br/>
-  socket.io<br/>
+  * mongodb<br/>
+  * mongogoose<br/>
+  * node<br/>
+  * socket.io<br/>
   
   
 create users: se deben crear los usuarios para llenar la base de datos de pruebas.<br/>
