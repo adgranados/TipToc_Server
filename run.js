@@ -45,6 +45,9 @@ db.once('open', function callback () {
 	  		console.log(msg);
 	  		socket.emit('message', "recibi: "+msg);
 	  	});
+	  	socket.on('question',function(question){
+	  		{q:"lo que la persona escribe", location:null}
+	  	})
 		socket.on('disconnect', function () { 
 		  	if(usersOnLine[userName]!=null)
 		  		delete usersOnLine[userName]
