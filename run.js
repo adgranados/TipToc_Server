@@ -1,4 +1,4 @@
-var usersOnLine = {}
+var usersOnLine = {} //pool de usuarios 
 
 var io = require('socket.io').listen(80);
 
@@ -40,15 +40,14 @@ db.once('open', function callback () {
 					}
 				}		
 			});
-
-		})	
-	  socket.on('message', function (msg) { 
+		});	
+	  	socket.on('message', function (msg) { 
 	  		console.log(msg);
 	  		socket.emit('message', "recibi: "+msg);
-	  });
-	  socket.on('disconnect', function () { 
-	  	if(usersOnLine[userName]!=null)
-	  		delete usersOnLine[userName]
-	  });
+	  	});
+		socket.on('disconnect', function () { 
+		  	if(usersOnLine[userName]!=null)
+		  		delete usersOnLine[userName]
+		});
 	});
 })
