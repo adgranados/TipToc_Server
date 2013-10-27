@@ -3,10 +3,10 @@ TipToc_Server
 
 Ubuntu server
 
-install nodejs
-install npm
-install mongodb
-install underscore
+install nodejs<br/>
+install npm<br/>
+install mongodb<br/>
+install underscore<br/>
 
 node_modules:
   mongodb
