@@ -1,19 +1,27 @@
+function make(mongoose, models) {
+	   /******************************
+		*			users 			 * 	
+		******************************/
 
-/*****************************
-*			users 			 * 	
-******************************/
+		var usersSchema = mongoose.Schema({
+		    userName: String,
+		    password: String,
+		    type:String,
+		    created: { type: Date, default: Date.now }
+		})
 
-var usersSchema = mongoose.Schema({
-    userName: String,
-    password: String,
-    type:String,
-    created: { type: Date, default: Date.now }
-})
+		usersSchema.methods.getNombre = function () {
+		  var nombreUsuario = this.name
+		    ? "User[Name = " + this.name +"]"
+		    : "No Tiene Nombre"
+		  console.log(nombreUsuario);
+		}
+		var User = mongoose.model('User', usersSchema)
 
-usersSchema.methods.getNombre = function () {
-  var nombreUsuario = this.name
-    ? "User[Name = " + this.name +"]"
-    : "No Tiene Nombre"
-  console.log(nombreUsuario);
+		models["User"] = User;
 }
-var User = mongoose.model('User', usersSchema)
+
+module.exports.make = make;
+
+
+
