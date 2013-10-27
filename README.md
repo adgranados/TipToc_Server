@@ -6,6 +6,7 @@ Ubuntu server
 install nodejs
 install npm
 install mongodb
+install underscore
 
 node_modules:
   mongodb
